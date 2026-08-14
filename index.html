@@ -1,0 +1,3062 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>第139届广交会：岭南经贸新画卷 | Canton Fair 139th Session</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- ==================== 样式系统 CSS ==================== -->
+    <style>
+        /* ==================== CSS变量 - 设计规范配色 ==================== */
+        :root {
+            /* 品牌与强调色 */
+            --primary: #ea2804;
+            --primary-deep: #c01f00;
+            --primary-light: #ff6a3d;
+            --primary-pink: #f4a8a0;
+            
+            /* 表面色 */
+            --canvas: #f9f7f3;
+            --surface-bone: #f3f0e8;
+            --surface-card: #ffffff;
+            --surface-dark: #202020;
+            --surface-deep: #000000;
+            
+            /* 文字色 */
+            --ink: #202020;
+            --body: #3a3a3a;
+            --charcoal: #575757;
+            --mute: #646464;
+            --ash: #8d8d8d;
+            --stone: #bbbbbb;
+            --on-dark: #fcfcfc;
+            --on-dark-mute: rgba(252, 252, 252, 0.72);
+            
+            /* 分割线 */
+            --hairline: rgba(32, 32, 32, 0.12);
+            --hairline-strong: #202020;
+            --divider-dark: rgba(255, 255, 255, 0.2);
+            
+            /* 功能色 */
+            --success: #2b9a66;
+            --link: #ea2804;
+            
+            /* 间距 */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 12px;
+            --space-lg: 16px;
+            --space-xl: 24px;
+            --space-xxl: 32px;
+            --space-xxxl: 48px;
+            
+            /* 圆角 */
+            --rounded-xs: 4px;
+            --rounded-sm: 6px;
+            --rounded-md: 10px;
+            --rounded-lg: 16px;
+            --rounded-full: 9999px;
+            
+            /* 字体 */
+            --font-display: 'Noto Serif SC', 'SimSun', serif;
+            --font-body: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            
+            /* 导航高度 */
+            --nav-height: 60px;
+            --nav-tablet-height: 50px;
+        }
+
+        /* ==================== 关键数据/名词高亮样式 ==================== */
+        .key-number {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .key-word {
+            color: var(--ink);
+            font-weight: 700;
+        }
+        .highlight-red {
+            color: #e53935;
+            font-weight: 600;
+        }
+        .highlight-bold {
+            font-weight: 700;
+        }
+
+        /* ==================== 时间轴板块标题样式 ==================== */
+        .timeline-category-header {
+            margin: var(--space-xxl) 0 var(--space-lg) 0;
+            padding-left: var(--space-xxl);
+        }
+        
+        .category-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+        
+        .category-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .timeline-links-preview {
+            margin-top: var(--space-sm);
+        }
+        
+        .links-count {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        /* ==================== 时间轴弹窗链接样式 ==================== */
+        .timeline-link-container {
+            margin-top: var(--space-lg);
+        }
+        
+        .timeline-link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md);
+            background: var(--surface-bone);
+            border-radius: var(--rounded-sm);
+            margin-bottom: var(--space-sm);
+            color: var(--ink);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-link-item:hover {
+            background: var(--primary-pink);
+            color: var(--primary);
+        }
+        
+        .timeline-link-item .link-title {
+            font-size: 13px;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .timeline-link-item .link-arrow {
+            color: var(--ash);
+            margin-left: var(--space-sm);
+        }
+        
+        /* ==================== 舆情卡片样式增强 ==================== */
+        .sentiment-short-desc {
+            font-size: 13px;
+            color: var(--on-dark-mute);
+            margin-top: var(--space-sm);
+            line-height: 1.6;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.6em;
+        }
+        
+        .sentiment-more-hint {
+            margin-top: var(--space-md);
+            text-align: center;
+            font-size: 12px;
+            color: var(--primary-light);
+        }
+
+        /* ==================== 重置与基础样式 ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--canvas);
+            color: var(--ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: var(--nav-height);
+        }
+
+        /* 强调文字样式 */
+        p strong, span strong, div strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* 手机适配字体大小 */
+        @media screen and (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+            
+            .hero-title {
+                font-size: clamp(24px, 7vw, 32px);
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(12px, 3.5vw, 16px);
+            }
+            
+            .section-title {
+                font-size: clamp(20px, 5vw, 28px);
+            }
+            
+            /* 导航栏手机适配 */
+            .nav-inner {
+                padding: 0 var(--space-md);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .nav-logo {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--primary);
+                min-width: 80px;
+                max-width: 200px;
+                flex-shrink: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            /* 语言切换 - 横向排布 */
+            .lang-toggle {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: var(--space-xs);
+                background: transparent;
+                border: none;
+                padding: 0;
+                flex-shrink: 0;
+            }
+            
+            .lang-btn {
+                font-size: 12px;
+                font-weight: 600;
+                padding: var(--space-xs) var(--space-sm);
+                background: transparent;
+                color: var(--primary);
+                border-radius: var(--rounded-full);
+                min-width: 40px;
+                text-align: center;
+            }
+            
+            .lang-btn.active {
+                background: var(--primary);
+                color: white;
+            }
+            
+            .lang-divider {
+                display: none;
+            }
+            
+            /* 时间轴手机适配 */
+            .timeline-category {
+                margin-bottom: var(--space-xl);
+            }
+            
+            .timeline-category-header {
+                padding-left: var(--space-md);
+            }
+            
+            .timeline-category-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            
+            .timeline-category-title {
+                font-size: 15px;
+            }
+            
+            .timeline {
+                padding-left: var(--space-xxl);
+            }
+            
+            .timeline::before {
+                left: 14px;
+            }
+            
+            .timeline-dot {
+                left: -24px;
+                width: 14px;
+                height: 14px;
+            }
+            
+            .timeline-content {
+                padding: var(--space-md);
+            }
+            
+            .timeline-date {
+                font-size: 12px;
+            }
+            
+            .timeline-title {
+                font-size: 14px;
+            }
+            
+            .timeline-desc {
+                font-size: 12px;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                min-height: 2.4em;
+            }
+            
+            /* 底部链接手机适配 - 两列布局 */
+            .links-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-sm);
+                max-width: 320px;
+            }
+
+            .links-grid-item {
+                padding: var(--space-sm) var(--space-md);
+                font-size: 14px;
+            }
+
+            /* 地图移动端 */
+            .map-3d-wrapper {
+                transform: rotateX(4deg) rotateY(0deg);
+            }
+
+            .map-container {
+                max-width: 100%;
+                padding: 0 var(--space-sm);
+            }
+            
+            .timeline-title {
+                font-size: 15px;
+            }
+            
+            .timeline-desc {
+                font-size: 12px;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                min-height: 2.4em;
+            }
+            
+            .sentiment-short-desc {
+                font-size: 12px;
+            }
+            
+            .stat-value {
+                font-size: 20px;
+            }
+            
+            .modal-city-info h3 {
+                font-size: 18px;
+            }
+            
+            .modal-city-info p {
+                font-size: 13px;
+            }
+            
+            .timeline-modal-body h3 {
+                font-size: 18px;
+            }
+            
+            .timeline-modal-body p {
+                font-size: 13px;
+            }
+            
+            .sentiment-modal-body h3 {
+                font-size: 18px;
+            }
+            
+            .sentiment-modal-body p {
+                font-size: 13px;
+            }
+            
+            .video-intro h3 {
+                font-size: 17px;
+            }
+            
+            .video-intro p {
+                font-size: 13px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            html {
+                font-size: 13px;
+            }
+            
+            .hero-title {
+                font-size: clamp(22px, 6vw, 28px);
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(11px, 3vw, 14px);
+            }
+            
+            .section-title {
+                font-size: clamp(18px, 5vw, 24px);
+            }
+            
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
+            /* 底部链接极小屏适配 */
+            .links-list-item {
+                padding: var(--space-sm) var(--space-sm);
+            }
+
+            .links-list-desc {
+                display: none;
+            }
+            
+            .timeline-desc {
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+            }
+            
+            .sentiment-keywords {
+                flex-wrap: wrap;
+            }
+            
+            .keyword-tag {
+                font-size: 11px;
+                padding: 2px var(--space-sm);
+            }
+            
+            .link-card-item {
+                font-size: 12px;
+            }
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+
+        .sentiment-modal-content img {
+            max-width: none !important;
+            height: auto !important;
+            -ms-user-select: none;
+        }
+
+        video {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .timeline-image,
+        .sentiment-chart,
+        .modal-image-container {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* ==================== 工具类 ==================== */
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 var(--space-lg);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(19.2px, 4.8vw, 25.6px);
+            font-weight: 700;
+            color: var(--ink);
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            letter-spacing: -0.5px;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: var(--space-md) auto 0;
+            border-radius: var(--rounded-full);
+        }
+
+        .card {
+            background: var(--surface-card);
+            border-radius: var(--rounded-md);
+            padding: var(--space-lg);
+            box-shadow: 0 4px 16px rgba(32, 32, 32, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        /* ==================== Apple风格导航栏 ==================== */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background: var(--canvas);
+            border-bottom: 1px solid var(--hairline);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 100px;
+            max-width: 220px;
+            flex-shrink: 1;
+        }
+
+        .lang-toggle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: var(--space-xs);
+            background: transparent;
+            border: none;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            padding: var(--space-xs) var(--space-md);
+            border: none;
+            border-radius: var(--rounded-full);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: var(--primary);
+            min-width: 45px;
+            text-align: center;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-pink);
+        }
+
+        .nav-section-item {
+            color: var(--primary);
+            background: var(--primary-pink);
+        }
+
+        .lang-toggle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: var(--space-xs);
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            min-width: 80px;
+        }
+
+        .lang-btn {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            padding: var(--space-xs) var(--space-sm);
+            border: none;
+            border-radius: var(--rounded-full);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: var(--primary);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-divider {
+            width: 1px;
+            height: 16px;
+            background: var(--hairline);
+        }
+
+        /* ==================== 英雄横幅区 ==================== */
+        .hero-band {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--primary-pink) 100%);
+            padding: var(--space-xxxl) var(--space-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-band::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: heroGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes heroGlow {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10%, 10%) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 8vw, 42px);
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(14px, 4vw, 18px);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+
+        /* ==================== 板块一：开篇视频 ==================== */
+        .section-video {
+            padding: var(--space-xxxl) 0;
+            background: var(--canvas);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: var(--rounded-lg);
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(32, 32, 32, 0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9比例 */
+            background: var(--surface-dark);
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background: rgba(234, 40, 4, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .video-play-btn::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 4px;
+        }
+
+        .video-play-btn.playing {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-intro {
+            margin-top: var(--space-xl);
+            text-align: center;
+        }
+
+        .video-intro h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--ink);
+            margin-bottom: var(--space-sm);
+        }
+
+        .video-intro p {
+            font-size: 14px;
+            color: var(--body);
+            line-height: 1.8;
+            padding: 0 var(--space-lg);
+        }
+
+        /* ==================== 板块二：广东省经贸地图（3D立体浮雕效果） ==================== */
+        .section-map {
+            padding: var(--space-xxxl) 0;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-map::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 40%, rgba(234,40,4,0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            perspective: 1200px;
+        }
+
+        /* 3D立体浮雕地图样式 */
+        .map-3d-wrapper {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: rotateX(8deg) rotateY(-2deg);
+        }
+
+        .map-3d-wrapper:hover {
+            transform: rotateX(4deg) rotateY(0deg);
+        }
+
+        .province-map {
+            width: 100%;
+            filter: drop-shadow(6px 10px 18px rgba(0,0,0,0.3)) drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+        }
+
+        .map-hint {
+            margin-top: calc(var(--space-md) * 0.8);
+            text-align: center;
+            font-size: 14.4px;
+            color: var(--primary-light);
+        }
+
+        .city-path {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            stroke: #ffffff;
+            stroke-width: 1;
+            stroke-linejoin: round;
+            fill: #ff6b35;
+        }
+
+        /* 悬停效果 */
+        .city-path:hover {
+            fill: #e55a2b;
+            stroke: #ffffff;
+            stroke-width: 1.5;
+        }
+
+        /* 选中状态 */
+        .city-path.active {
+            fill: #e55a2b;
+            stroke: #ffffff;
+            stroke-width: 2;
+        }
+
+        /* 城市标签 */
+        .city-label {
+            font-family: var(--font-body);
+            font-size: 9px;
+            font-weight: 600;
+            fill: white;
+            pointer-events: none;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+
+        .city-label.highlight-label {
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* 地图半屏卡片弹窗 */
+        .map-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .map-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .map-modal-content {
+            background: var(--surface-card);
+            width: 100%;
+            max-width: 560px;
+            max-height: 70vh; /* 不超过屏幕高度的四分之三 */
+            border-radius: var(--rounded-lg) var(--rounded-lg) 0 0;
+            padding: var(--space-xl);
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow-y: auto;
+            box-shadow: 0 -8px 32px rgba(0,0,0,0.15);
+        }
+
+        .map-modal.active .map-modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-handle {
+            width: 40px;
+            height: 4px;
+            background: var(--stone);
+            border-radius: var(--rounded-full);
+            margin: 0 auto var(--space-lg);
+        }
+
+        .modal-city-header {
+            display: flex;
+            align-items: flex-start; /* 顶部对齐 - 图片与标题水平对齐 */
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .modal-city-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--rounded-md);
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--surface-bone);
+        }
+
+        .modal-city-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-city-info {
+            flex: 1;
+            min-width: 0;
+            padding: 0;
+        }
+
+        .modal-city-info h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--ink);
+            margin-bottom: var(--space-sm);
+        }
+
+        .modal-city-info p {
+            font-size: 13px;
+            color: var(--body);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 垂直居中对齐 */
+        }
+        
+        .city-exhibition {
+            background: var(--surface-bone);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--rounded-sm);
+            margin-bottom: var(--space-md);
+            font-size: 13px;
+        }
+        
+        .city-exhibition strong {
+            color: var(--primary);
+        }
+
+        .modal-news-list {
+            margin-top: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 垂直居中对齐 */
+        }
+        
+        .modal-news-list h4 {
+            font-size: 14px;
+            color: var(--ink);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .modal-news-item {
+            display: block;
+            padding: var(--space-md);
+            background: var(--surface-bone);
+            border-radius: var(--rounded-md);
+            margin-bottom: var(--space-sm);
+            transition: all 0.3s ease;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .modal-news-item:active {
+            background: var(--primary-pink);
+        }
+
+        .modal-news-item h5 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: var(--space-xs);
+        }
+
+        .modal-news-item p {
+            font-size: 12px;
+            color: var(--charcoal);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            width: 32px;
+            height: 32px;
+            background: var(--surface-card);
+            border: 1px solid var(--hairline);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .modal-close-btn::before,
+        .modal-close-btn::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 2px;
+            background: var(--ink);
+            border-radius: 1px;
+        }
+
+        .modal-close-btn::before { transform: rotate(45deg); }
+        .modal-close-btn::after { transform: rotate(-45deg); }
+
+        /* ==================== 板块三：时间长卷（时间轴形式） ==================== */
+        .section-timeline {
+            padding: var(--space-xxxl) 0;
+            background: var(--canvas);
+        }
+
+        /* 时间轴分类标题 */
+        .timeline-category {
+            margin-bottom: var(--space-xxl);
+        }
+
+        .timeline-category-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-lg);
+        }
+
+        .timeline-category-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: var(--rounded-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .timeline-category-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* 时间轴主线 */
+        .timeline {
+            position: relative;
+            padding-left: var(--space-xxxl);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-pink));
+            border-radius: var(--rounded-full);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-xxl);
+            cursor: pointer;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -32px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background: var(--primary);
+            border: 3px solid var(--canvas);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(234, 40, 4, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot,
+        .timeline-item.active .timeline-dot {
+            transform: scale(1.3);
+            background: var(--primary-deep);
+        }
+
+        .timeline-content {
+            background: var(--surface-card);
+            border-radius: var(--rounded-md);
+            padding: var(--space-lg);
+            box-shadow: 0 4px 16px rgba(32, 32, 32, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-content,
+        .timeline-item.active .timeline-content {
+            transform: translateX(8px);
+            box-shadow: 0 8px 24px rgba(32, 32, 32, 0.12);
+        }
+
+        .timeline-date {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .timeline-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: var(--space-sm);
+            line-height: 1.4;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        .timeline-desc {
+            font-size: 13px;
+            color: var(--body);
+            line-height: 1.6;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 3.9em;
+        }
+
+        .timeline-image {
+            margin-top: var(--space-md);
+            border-radius: var(--rounded-sm);
+            overflow: hidden;
+            height: 120px;
+            background: var(--surface-bone);
+        }
+
+        .timeline-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 时间轴弹窗 */
+        .timeline-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .timeline-modal-content {
+            background: var(--surface-card);
+            width: 100%;
+            max-width: 400px;
+            border-radius: var(--rounded-lg);
+            overflow: hidden;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-modal.active .timeline-modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .timeline-modal-image {
+            width: 100%;
+            height: 200px;
+            background: var(--surface-bone);
+            overflow: hidden;
+        }
+
+        .timeline-modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .timeline-modal-body {
+            padding: var(--space-xl);
+        }
+
+        .timeline-modal-body h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--ink);
+            margin-bottom: var(--space-sm);
+        }
+
+        .timeline-modal-body .date {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+
+        .timeline-modal-body p {
+            font-size: 14px;
+            color: var(--body);
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+        }
+
+        .timeline-modal-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            background: var(--primary);
+            color: white;
+            border-radius: var(--rounded-full);
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-modal-link:active {
+            background: var(--primary-deep);
+        }
+
+        /* ==================== 板块四：舆情观察 ==================== */
+        .section-sentiment {
+            padding: var(--space-xxxl) 0;
+            background: var(--surface-dark);
+            color: var(--on-dark);
+        }
+
+        .section-sentiment .section-title {
+            color: var(--on-dark);
+        }
+
+        /* 舆情板块分类 */
+        .sentiment-category {
+            margin-bottom: var(--space-xl);
+        }
+
+        .sentiment-category-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-md);
+            border-left: 3px solid var(--primary);
+        }
+
+        .sentiment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin-top: var(--space-md);
+        }
+
+        .sentiment-grid-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+
+        .sentiment-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--rounded-md);
+            padding: var(--space-lg);
+            transition: all 0.3s ease;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .sentiment-card:active {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(0.98);
+        }
+
+        .sentiment-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .sentiment-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: var(--rounded-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .sentiment-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--on-dark);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .sentiment-chart {
+            height: 150px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: var(--rounded-sm);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md);
+        }
+
+        .sentiment-chart img {
+            max-height: 100%;
+            width: auto;
+        }
+
+        .sentiment-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--space-md);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-light);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--on-dark-mute);
+            margin-top: var(--space-xs);
+        }
+
+        /* 舆情弹窗 */
+        .sentiment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .sentiment-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sentiment-modal-content {
+            background: var(--surface-card);
+            width: 100%;
+            max-width: 420px;
+            border-radius: var(--rounded-lg);
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sentiment-modal.active .sentiment-modal-content {
+            transform: scale(1);
+        }
+
+        .sentiment-modal-image {
+            width: 100%;
+            height: 180px;
+            background: var(--surface-dark);
+            overflow: hidden;
+            position: relative;
+            display: block !important;
+        }
+
+        .sentiment-modal-image img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            position: relative !important;
+            display: block !important;
+        }
+
+        .sentiment-modal-body {
+            padding: var(--space-xl);
+        }
+
+        .sentiment-modal-body h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--ink);
+            margin-bottom: var(--space-md);
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .sentiment-modal-body p {
+            font-size: 14px;
+            color: var(--body);
+            line-height: 1.8;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .sentiment-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+        }
+
+        .keyword-tag {
+            padding: var(--space-xs) var(--space-md);
+            background: var(--surface-bone);
+            color: var(--ink);
+            border-radius: var(--rounded-full);
+            font-size: 12px;
+        }
+
+        /* ==================== 底部链接区（简洁两列样式） ==================== */
+        .section-footer-links {
+            padding: var(--space-xl) 0;
+            background: var(--surface-bone);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-sm);
+            width: 90%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .links-grid-item {
+            padding: var(--space-md) var(--space-lg);
+            background: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+
+        .links-grid-item:hover {
+            background: var(--primary-pink);
+            color: var(--primary);
+        }
+
+        /* ==================== 版权区 ==================== */
+        .copyright-bar {
+            background: var(--surface-bone);
+            padding: var(--space-lg) var(--space-xl);
+            text-align: center;
+        }
+
+        .copyright-text {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==================== 丝滑流畅动效 ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes smoothHover {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .animate-in-left {
+            animation: fadeInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .animate-in-right {
+            animation: fadeInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .animate-slide-down {
+            animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
+        .animate-delay-3 { animation-delay: 0.3s; }
+        .animate-delay-4 { animation-delay: 0.4s; }
+        .animate-delay-5 { animation-delay: 0.5s; }
+
+        /* 卡片悬停效果 */
+        .card-hover-effect {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(32, 32, 32, 0.12);
+        }
+
+        /* 链接悬停效果 */
+        .link-hover-effect {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .link-hover-effect:hover {
+            transform: translateX(4px);
+        }
+
+        /* 按钮点击波纹效果 */
+        .ripple-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple-effect::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1) translate(-50%, -50%);
+            transform-origin: 50% 50%;
+        }
+
+        .ripple-effect:active::after {
+            animation: ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0) translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(40) translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+
+        /* 渐变文字效果 */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--primary));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 3s linear infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* 滚动触发动画 */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 导航栏动画 */
+        .nav-header {
+            transition: all 0.3s ease;
+        }
+
+        .nav-header.scrolled {
+            background: rgba(249, 247, 243, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ==================== 语言切换过渡 ==================== */
+        .lang-content {
+            transition: opacity 0.3s ease;
+        }
+
+        .lang-content.switching {
+            opacity: 0.5;
+        }
+
+        /* ==================== 滚动条美化 ==================== */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--surface-bone);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--stone);
+            border-radius: var(--rounded-full);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--ash);
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== 简化导航栏 ==================== -->
+    <header class="nav-header">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span data-lang="logo">第139届中国进出口商品交易会</span>
+            </div>
+            <div class="lang-toggle">
+                <button class="lang-btn active" id="lang-zh" onclick="setLanguage('zh')">中文</button>
+                <button class="lang-btn" id="lang-en" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 主内容区 ==================== -->
+    <main class="main-content">
+        <!-- 英雄横幅 + 导航合并 -->
+        <section class="hero-band">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span data-lang="hero-title">第139届广交会<br>岭南经贸新画卷</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span data-lang="hero-subtitle">Canton Fair 139th Session: A New Chapter in Lingnan Trade</span>
+                </p>
+            </div>
+        </section>
+
+
+
+        <!-- ==================== 板块一：开篇视频 ==================== -->
+        <section id="section-video" class="section-video">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="section1-title">用《喜鹊谋杀案》打开第139届广交会</span>
+                </h2>
+                
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <!-- ==================== 视频文件路径占位 ==================== -->
+                        <!-- 请将视频文件放在: F:\5.大二下\8.网络传播概论\第二次作业\网页\1.喜鹊谋杀案视频\ -->
+                        <!-- 示例: <video src="F:/5.大二下/8.网络传播概论/第二次作业/网页/1.喜鹊谋杀案视频/video.mp4"></video> -->
+                        <video id="mainVideo" poster="" controls playsinline>
+                            <source src="./1.video/video2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="video-intro" style="margin-top: var(--space-xl); padding: var(--space-xl); background: var(--surface-card); border-radius: var(--rounded-md); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    <p data-lang="video-desc" style="font-size:14px; color:var(--body); line-height:1.8; text-align:center;">
+                        <strong>第139届广交会（广交会）</strong>于2026年4月15日至5月5日圆满落幕，作为<strong>「中国第一展」</strong>，本届展会展览总面积达<strong>155万平方米</strong>，展位总数<strong>7.57万个</strong>，参展企业超<strong>3.2万家</strong>，吸引了来自<strong>220个国家和地区</strong>的<strong>31.4万名</strong>境外采购商到会，现场意向出口成交<strong>257亿美元</strong>，多项核心指标均超往届，彰显了中国外贸的坚实韧性与强劲活力。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 板块二：时间长卷 ==================== -->
+        <section id="section-timeline" class="section-timeline">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="section2-title">时间长卷</span>
+                </h2>
+                <div class="map-hint">
+                    <span data-lang="hint-click-card">点击卡片查看详情内容</span>
+                </div>
+                
+                <div class="timeline-grid" id="timelineGrid">
+                    <!-- 时间卷板块将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 板块三：广东省经贸地图（立体浮雕效果） ==================== -->
+        <section id="section-map" class="section-map">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="section3-title">广东省经贸地图</span>
+                </h2>
+                <div class="map-hint">
+                    <span data-lang="hint-click-city">点击城市查看详情内容</span>
+                </div>
+                
+                <div class="map-container">
+                    <div class="map-3d-wrapper">
+                        <svg class="province-map" id="provinceMap" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <!-- 阴影效果 -->
+                                <filter id="mapShadow3d" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="4" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,0.35)"/>
+                                </filter>
+                                
+                                <!-- 高亮发光效果 -->
+                                <filter id="mapGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ff6b35" flood-opacity="0.7"/>
+                                </filter>
+                            </defs>
+                            
+                            <g id="mapGroup">
+                                <!-- 地图将通过JavaScript动态生成 -->
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 板块四：舆情观察 ==================== -->
+        <section id="section-sentiment" class="section-sentiment">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="section4-title">舆情观察</span>
+                </h2>
+                <div class="map-hint">
+                    <span data-lang="hint-click-card">点击卡片查看详情内容</span>
+                </div>
+                
+                <div class="sentiment-grid" id="sentimentGrid">
+                    <!-- 舆情卡片将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 底部链接区 ==================== -->
+        <section id="section-links" class="section-footer-links">
+            <div class="container">
+                <div class="links-grid" id="linksGrid">
+                    <!-- 链接将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== 地图弹窗 ==================== -->
+    <div class="map-modal" id="mapModal">
+        <div class="map-modal-content">
+            <div class="modal-handle"></div>
+            <button class="modal-close-btn" onclick="closeMapModal()"></button>
+            <div class="modal-city-header">
+                <div class="modal-city-image">
+                    <!-- ==================== 城市图片路径占位 ==================== -->
+                    <img id="modalCityImage" src="" alt="">
+                </div>
+                <div class="modal-city-info">
+                    <h3 id="modalCityName"></h3>
+                    <p id="modalCityDesc"></p>
+                </div>
+            </div>
+            <div class="modal-news-list" id="modalNewsList">
+                <!-- 新闻列表将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 时间轴弹窗 ==================== -->
+    <div class="timeline-modal" id="timelineModal">
+        <div class="timeline-modal-content">
+            <div class="timeline-modal-image">
+                <!-- ==================== 时间轴图片路径占位 ==================== -->
+                <img id="timelineModalImage" src="" alt="">
+            </div>
+            <div class="timeline-modal-body">
+                <h3 id="timelineModalTitle"></h3>
+                <p class="date" id="timelineModalDate"></p>
+                <p id="timelineModalDesc"></p>
+                <div class="timeline-link-container" id="timelineModalLinkContainer">
+                    <!-- 链接将通过JavaScript动态生成 -->
+                </div>
+            </div>
+            <button class="modal-close-btn" onclick="closeTimelineModal()" style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.9);"></button>
+        </div>
+    </div>
+
+    <!-- ==================== 舆情弹窗 ==================== -->
+    <div class="sentiment-modal" id="sentimentModal">
+        <div class="sentiment-modal-content">
+            <div class="sentiment-modal-image">
+                <!-- ==================== 舆情图片路径占位 ==================== -->
+                <img id="sentimentModalImage" src="" alt="">
+            </div>
+            <div class="sentiment-modal-body">
+                <h3 id="sentimentModalTitle"></h3>
+                <p id="sentimentModalDesc"></p>
+                <div class="sentiment-keywords" id="sentimentKeywords">
+                    <!-- 关键词标签 -->
+                </div>
+            </div>
+            <button class="modal-close-btn" onclick="closeSentimentModal()" style="position:absolute;top:12px;right:12px;background:var(--surface-card);"></button>
+        </div>
+    </div>
+
+    <!-- ==================== JavaScript ==================== -->
+    <script>
+        /* ==================== 全局变量 ==================== */
+        let currentLang = 'zh';
+        
+        /* ==================== 中英双语文案数据 ==================== */
+        // 文案来源: 
+        // - F:\5.大二下\8.网络传播概论\第二次作业\网页\3.timeline\时间长卷.docx
+        // - F:\5.大二下\8.网络传播概论\第二次作业\网页\4.sentiment\广交会舆情洞察.docx
+        
+        const i18n = {
+            zh: {
+                logo: "第139届中国进出口商品交易会",
+                "hero-title": "第139届广交会<br>岭南经贸新画卷",
+                "hero-subtitle": "Canton Fair 139th Session: A New Chapter in Lingnan Trade",
+                "section1-title": "用《喜鹊谋杀案》打开第139届广交会",
+                "video-title": "《喜鹊谋杀案》带你走进广交会",
+                "video-desc": "<strong>第139届广交会</strong>于2026年4月15日至5月5日举办，展览总面积<strong>155万平方米</strong>，展位<strong>7.57万个</strong>，参展企业超<strong>3.2万家</strong>，吸引<strong>220个国家和地区</strong><strong>31.4万名</strong>境外采购商，现场意向成交<strong>257亿美元</strong>。",
+                "section2-title": "时间长卷",
+                "legend-highlight": "重点城市",
+                "legend-normal": "一般城市",
+                "section3-title": "广东省经贸地图",
+                "section4-title": "广交会舆情观察",
+                "links-title": "广交会相关链接",
+                "read-more": "阅读更多",
+                "map-loading": "正在加载地图...",
+                "timeline-loading": "加载中...",
+                "overview-title": "事件概述",
+                "overview-text": "<strong>第139届广交会（广交会）</strong>于2026年4月15日至5月5日圆满落幕，作为<strong>「中国第一展」</strong>，本届展会展览总面积达<strong>155万平方米</strong>，展位总数<strong>7.57万个</strong>，参展企业超<strong>3.2万家</strong>，吸引了来自<strong>220个国家和地区</strong>的<strong>31.4万名</strong>境外采购商到会，现场意向出口成交<strong>257亿美元</strong>，多项核心指标均超往届，彰显了中国外贸的坚实韧性与强劲活力。",
+                "hint-click-card": "点击卡片查看详情内容",
+                "hint-click-city": "点击城市查看详情内容",
+                "exhibition-label": "参展情况："
+            },
+            en: {
+                logo: "Canton Fair 139",
+                "hero-title": "Canton Fair 139th<br>New Chapter in Lingnan Trade",
+                "hero-subtitle": "Exploring the Vibrant Trade Landscape of Southern China",
+                "section1-title": "Opening the Canton Fair with 'The Magpie Murder Case'",
+                "video-title": "'The Magpie Murder Case' Takes You to Canton Fair",
+                "video-desc": "<strong>The 139th Canton Fair</strong>: <strong>1.55M sqm</strong> exhibition area, <strong>75,700 booths</strong>, <strong>32,000+ exhibitors</strong>, <strong>314,000+</strong> foreign buyers from <strong>220 countries/regions</strong>, <strong>$25.7B</strong> intended exports.",
+                "section2-title": "Timeline",
+                "legend-highlight": "Key Cities",
+                "legend-normal": "Other Cities",
+                "section3-title": "Guangdong Trade Map",
+                "section4-title": "Sentiment Overview",
+                "links-title": "Learn More",
+                "read-more": "Read More",
+                "map-loading": "Loading map...",
+                "timeline-loading": "Loading...",
+                "overview-title": "Event Overview",
+                "overview-text": "<strong>The 139th China Import and Export Fair (Canton Fair)</strong> concluded successfully from April 15 to May 5, 2026. As <strong>'China's Top Exhibition'</strong>, the total exhibition area reached <strong>1.55 million sqm</strong>, with <strong>75,700 booths</strong> and over <strong>32,000</strong> exhibiting companies, attracting <strong>314,000</strong> foreign buyers from <strong>220 countries and regions</strong>, with intended exports reaching <strong>$25.7B</strong>.",
+                "hint-click-card": "Click card for details",
+                "hint-click-city": "Click city for details",
+                "exhibition-label": "Exhibition: "
+            }
+        };
+
+        /* ==================== 城市数据 ==================== */
+        // 数据来源: ./2.map/各市情况.docx
+        // 图片路径: ./2.map/images/
+        const citiesData = [
+            {
+                id: "guangzhou",
+                name: { zh: "广州", en: "Guangzhou" },
+                exhibition: { zh: "875家企业参展，总展位数超2700个，其中民营企业数量超800家", en: "875 exhibitors, 2,700+ booths, 800+ private enterprises" },
+                description: { zh: "本届广交会，广州交易团参展规模创新高，结构持续优化。服务机器人、智慧医疗、时尚饰品及无人机等专区企业数和展位数均居全省第一。新质生产力企业占比超50%，涵盖高新技术、专精特新「小巨人」等领域。医疗、数字教育等「广州智造」新品也将亮相，展现广州在智能装备、智慧医疗、先进制造等方面的产业优势。", en: "This session, Guangzhou trade delegation set record in exhibition scale with optimized structure. Service robots, smart healthcare, fashion accessories and drone zones ranked first in the province. New quality productivity enterprises exceeded 50%, covering high-tech and specialized enterprises." },
+                image: "./2.map/images/guangzhou.svg",
+                highlight: true,
+                news: [
+                    { title: { zh: "广州全力备战第139届广交会", en: "Guangzhou Prepares for 139th Canton Fair" }, url: "https://huacheng.gz-cmc.com/pages/2026/04/15/1cf339b372e34c098be5e580ee467293.html" }
+                ]
+            },
+            {
+                id: "shenzhen",
+                name: { zh: "深圳", en: "Shenzhen" },
+                exhibition: { zh: "1217家企业、3032个展位", en: "1,217 enterprises, 3,032 booths" },
+                description: { zh: "本届广交会深圳交易团共计参展企业1217家、展位3032个。深圳交易团在服务机器人专区、智慧医疗专区均有布局，并在本届首次增设的智能穿戴、显示技术、消费级无人机等专区集中展现了前沿科技实力。未来穿戴健康科技（SKG）的折叠式颈部按摩器、康冠科技的AI交互眼镜等创新产品成为全场焦点，全球领先的激光雕刻机龙头企业xTool也带来了定制化解决方案。", en: "Shenzhen trade delegation has 1,217 exhibiting companies with 3,032 booths. They showcased cutting-edge technology in service robot zone, smart healthcare zone, and new zones including smart wearables, display technology, and consumer drones." },
+                image: "./2.map/images/shenzhen.svg",
+                highlight: true,
+                news: [
+                    { title: { zh: "深圳科技企业闪耀广交会", en: "Shenzhen Tech Companies Shine at Canton Fair" }, url: "https://fgw.sz.gov.cn/ztzl/qtztzl/szscjmyjjfzzhfwpt/xwdt/content/post_12741641.html" }
+                ]
+            },
+            {
+                id: "foshan",
+                name: { zh: "佛山", en: "Foshan" },
+                exhibition: { zh: "684家企业、1952个展位（历史新高）", en: "684 enterprises, 1,952 booths (record high)" },
+                description: { zh: "本届广交会，佛山共有684家企业、1952个展位亮相，展位规模创历史新高。佛山参展企业收获颇丰，合计出口订单金额达22.8亿美元，位居全省第二，较上届增长6%。参展阵容中，先进制造与科创企业占比高达62.3%。首次参展的思迈乐电器便创下200万美元成交佳绩；佛山照明、欧思丹热能科技、歌纳卫浴等企业也纷纷斩获大额订单。", en: "Foshan had 684 enterprises and 1,952 booths, setting a historical record. Total export orders reached $2.28 billion, ranking second in the province, up 6% from previous session. Advanced manufacturing and tech enterprises accounted for 62.3%." },
+                image: "./2.map/images/foshan.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "佛山军团闪耀广交会", en: "Foshan Companies Shine at Canton Fair" }, url: "https://content.foshanplus.com/newsDetails.html?newsId=1026006" }
+                ]
+            },
+            {
+                id: "dongguan",
+                name: { zh: "东莞", en: "Dongguan" },
+                exhibition: { zh: "485家企业、1041个展位", en: "485 enterprises, 1,041 booths" },
+                description: { zh: "本届广交会，东莞军团485家企业、1041个展位亮相，规模再创新高。东莞首次以「制造美学之城」的全新城市形象亮相。参展企业中，先进制造与科创领域企业占比高达57.7%。广交会一期东莞便斩获意向成交额5.3亿美元，同比增长15.2%。", en: "Dongguan had 485 enterprises and 1,041 booths, setting a new scale record. They debuted as 'Manufacturing Aesthetics City'. Advanced manufacturing and tech enterprises accounted for 57.7%. Phase 1 achieved $530 million in intended exports, up 15.2%." },
+                image: "./2.map/images/dongguan.svg",
+                highlight: true,
+                news: [
+                    { title: { zh: "东莞制造向东莞智造转变", en: "Dongguan's Manufacturing Transformation" }, url: "https://webzdg.sun0769.com/web/news/content/785925?share=1" }
+                ]
+            },
+            {
+                id: "zhuhai",
+                name: { zh: "珠海", en: "Zhuhai" },
+                exhibition: { zh: "268家企业、631个展位（首次参展企业18家）", en: "268 enterprises, 631 booths (18 first-time exhibitors)" },
+                description: { zh: "本届广交会珠海分团共组织268家企业参展，其中首次参展企业18家，展位总数631个。珠海分团参展企业科创底色十足，展品涵盖智能家电、消费电子、新能源等战略性新兴产业，格力电器、奔图电子等企业展品曾获广交会设计创新奖。展会期间，珠海分团将举办超50场贸易对接活动。", en: "Zhuhai organized 268 enterprises including 18 first-time exhibitors with 631 booths. Enterprises showcased smart home appliances, consumer electronics, and new energy products. Gree Electric and BenQ Electronics products won Canton Fair Design Innovation Awards." },
+                image: "./2.map/images/zhuhai.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "珠海航空航天展品亮相广交会", en: "Zhuhai Aerospace Products at Canton Fair" }, url: "https://pub-zhtb.hizh.cn/a/202604/15/AP69df7504e4b0c0dcc09e8eb5.html" }
+                ]
+            },
+            {
+                id: "zhongshan",
+                name: { zh: "中山", en: "Zhongshan" },
+                exhibition: { zh: "351家企业参展（83家新参展企业，创历年新高）", en: "351 enterprises (83 new exhibitors, record high)" },
+                description: { zh: "本届广交会，中山共有351家企业参展，其中有83家新参展企业，参展企业数、展位数创历年新高。中山参展企业科创成色突出，依托28个国家级制造业基地优势与展会三期主题高度匹配。第一期「先进制造」中，家电、照明、五金等优势出口产业的参展企业数、展位数分别占参展总量的71.5%、70.5%。", en: "Zhongshan had 351 enterprises including 83 new exhibitors, setting historical records. They leveraged 28 national manufacturing bases to match the three-phase themes. Phase 1 advanced manufacturing saw home appliances, lighting, and hardware enterprises account for 71.5% and 70.5% respectively." },
+                image: "./2.map/images/zhongshan.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "中山灯饰照亮广交会展厅", en: "Zhongshan Lighting Illuminates Canton Fair" }, url: "https://zsxwfbt.zs.gov.cn/news/index/view/cateid/1193/id/718464.html" }
+                ]
+            },
+            {
+                id: "jiangmen",
+                name: { zh: "江门", en: "Jiangmen" },
+                exhibition: { zh: "340家企业、801个展位（品牌展位242个）", en: "340 enterprises, 801 booths (242 brand booths)" },
+                description: { zh: "本届展会上，江门共有340家企业参展、获得801个展位，其中品牌展位242个、一般性展位559个。江门参展企业中高新技术企业与专精特新企业占比高达57.9%。摩托车展区品牌展位企业数量由3家增至7家，形成强势「摩托军团」。台山迪生力首次参展即携发明专利轮毂竞逐CF奖。", en: "Jiangmen had 340 enterprises with 801 booths including 242 brand booths. High-tech and specialized enterprises accounted for 57.9%. Motorcycle zone brand booth enterprises increased from 3 to 7, forming a strong 'motorcycle army'." },
+                image: "./2.map/images/jiangmen.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "江门企业闪耀广交会", en: "Jiangmen Enterprises Shine at Canton Fair" }, url: "https://www.jiangmen.gov.cn/home/bmdt/content/post_3475421.html" }
+                ]
+            },
+            {
+                id: "huizhou",
+                name: { zh: "惠州", en: "Huizhou" },
+                exhibition: { zh: "211家企业、377个展位", en: "211 enterprises, 377 booths" },
+                description: { zh: "本届广交会，惠州分团共获得分配展位377个，211家惠州企业将参加线下展。惠州参展规模再创新高，涵盖智能家电、车载电子、新能源电池等前沿领域。惠州实施「双向拓市」策略，组织TCL、威林科技、登辉电器等企业携创新产品亮相展馆，并创新开展「引客入门」服务。", en: "Huizhou delegation received 377 booths with 211 enterprises participating offline. They showcased smart home appliances, automotive electronics, and new energy batteries. Implemented 'two-way market expansion' strategy, organizing TCL, Welin Technology, and Denghui Electric to showcase innovative products." },
+                image: "./2.map/images/huizhou.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "惠州企业组团参展广交会", en: "Huizhou Enterprises Exhibit at Canton Fair" }, url: "http://e.hznews.com/hzrb/pc/content/202603/29/content_1123337.html" }
+                ]
+            },
+            {
+                id: "zhaoqing",
+                name: { zh: "肇庆", en: "Zhaoqing" },
+                exhibition: { zh: "125家企业、211个展位（16家首次参展企业）", en: "125 enterprises, 211 booths (16 first-time exhibitors)" },
+                description: { zh: "本届广交会肇庆共组织125家企业参展，其中包含16家首次参展企业，设置211个展位，覆盖26个展区。肇庆参展企业中高新技术与专精特新企业占比近六成。聚焦「新、绿、智」趋势，德通公司节能90%的工业吊扇、宜蒂电器户外派对音响等「拳头产品」广受关注。", en: "Zhaoqing organized 125 enterprises including 16 first-time exhibitors with 211 booths covering 26 zones. High-tech and specialized enterprises accounted for nearly 60%. Focused on 'new, green, smart' trends, Detong's 90% energy-saving industrial fans and Yidi's outdoor party speakers gained attention." },
+                image: "./2.map/images/zhaoqing.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "肇庆制造闪耀广交会", en: "Zhaoqing Manufacturing Shines at Canton Fair" }, url: "http://www.xjrb.com/2026/0416/693753.shtml" }
+                ]
+            },
+            {
+                id: "shaoguan",
+                name: { zh: "韶关", en: "Shaoguan" },
+                exhibition: { zh: "36家企业参展", en: "36 enterprises" },
+                description: { zh: "本届展会，韶关共组织36家企业参展，阵容凸显高质量发展成色。韶关参展企业科创底色鲜明，新质生产力企业占比超52.8%，累计收获意向订单11.6亿元，同比增长10%。展品聚焦高端工业涂料、智能清洁家电、绿色环保新材料等创新领域。韶关创新引入本地兰花元素进入企业展位。", en: "Shaoguan organized 36 enterprises with a lineup highlighting high-quality development. New quality productivity enterprises exceeded 52.8%. Received 1.16 billion yuan in intended orders, up 10%. Products focused on high-end industrial coatings, smart cleaning appliances, and green materials." },
+                image: "./2.map/images/shaoguan.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "韶关企业首次亮相广交会", en: "Shaoguan Enterprises Debut at Canton Fair" }, url: "https://www.thepaper.cn/newsDetail_forward_33106425" }
+                ]
+            },
+            {
+                id: "heyuan",
+                name: { zh: "河源", en: "Heyuan" },
+                exhibition: { zh: "16家企业、41个展位", en: "16 enterprises, 41 booths" },
+                description: { zh: "本届广交会，河源市组织16家企业参展，布设展位41个，展览总面积369平方米。展品涵盖孕婴童用品、医药保健品及医疗器械、食品、箱包等特色产品，品类丰富。正雄箱包、云彩实业两家企业入选品牌类参展企业。", en: "Heyuan organized 16 enterprises with 41 booths covering 369 sqm. Products included mother-baby supplies, health products, food, and luggage. Zhengxiong Luggage and Yuncai Industry were selected as brand exhibitors." },
+                image: "./2.map/images/heyuan.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "河源企业亮相广交会", en: "Heyuan Enterprises at Canton Fair" }, url: "http://www.hyrbnews.cn/xinwen/shizheng/content/2026-04/29/content_354741.html#" }
+                ]
+            },
+            {
+                id: "meizhou",
+                name: { zh: "梅州", en: "Meizhou" },
+                exhibition: { zh: "74家企业、199个展位", en: "74 enterprises, 199 booths" },
+                description: { zh: "本届广交会，梅州市共有74家参展企业、199个展位。梅州参展企业意向成交总金额超1亿美元，与去年相比稳中有升。展品覆盖家用电器、智能装备、日用陶瓷、特色食品等重点优势行业，多款自主研发的特色产品吸引全球采购商洽谈合作。", en: "Meizhou had 74 enterprises with 199 booths. Total intended transaction amount exceeded $100 million, steady growth from last year. Products covered home appliances, smart equipment, daily ceramics, and specialty foods, with many self-developed products attracting global buyers." },
+                image: "./2.map/images/meizhou.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "梅州企业收获丰硕成果", en: "Meizhou Enterprises Achieve Abundant Results" }, url: "https://mzrb.meizhou.cn/html/2026-05/07/content_404903.htm" }
+                ]
+            },
+            {
+                id: "chaozhou",
+                name: { zh: "潮州", en: "Chaozhou" },
+                exhibition: { zh: "343家企业（较上届增加16家）", en: "343 enterprises (16 more than last session)" },
+                description: { zh: "本届广交会，潮州市企共有343家企业获得参展资格，较上届增加16家。潮州参展企业结构持续优化，其中高新技术与专精特新企业合计占参展企业总数61.8%，占比较上届提升8个百分点。展品覆盖日用陶瓷、工艺陶瓷、卫浴设备、餐厨用具、食品等22个展区。", en: "Chaozhou had 343 enterprises, 16 more than last session. High-tech and specialized enterprises accounted for 61.8%, up 8 percentage points from last session. Products covered daily ceramics, craft ceramics, bathroom equipment, kitchenware, and food across 22 exhibition zones." },
+                image: "./2.map/images/chaozhou.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "潮州陶瓷惊艳广交会", en: "Chaozhou Ceramics Amaze at Canton Fair" }, url: "https://www.chaozhoudaily.com/content/202604/05/c26055513.html" }
+                ]
+            },
+            {
+                id: "shantou",
+                name: { zh: "汕头", en: "Shantou" },
+                exhibition: { zh: "782个展位（品牌展位192个）", en: "782 booths (192 brand booths)" },
+                description: { zh: "本届广交会汕头分团共有展位782个，其中品牌展位192个、一般性展位590个。参展企业结构持续优化，先进制造与科创类企业显著增加。唯艺包装、双鹏塑料等企业纷纷主打绿色循环理念。汕头玩具创意与纺织服装两大特色产业集群效应显著。", en: "Shantou had 782 booths including 192 brand booths. Enterprise structure was continuously optimized with significant increase in advanced manufacturing and tech enterprises. Weiyi Packaging and Shuangpeng Plastics focused on green circular concepts. Toy creative and textile clusters showed significant effects." },
+                image: "./2.map/images/shantou.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "汕头玩具创意产业闪耀广交会", en: "Shantou Toy Industry Shines at Canton Fair" }, url: "https://www.shantou.gov.cn/cnst/ztzl/zyjhjs/content/post_2528656.html" }
+                ]
+            },
+            {
+                id: "jieyang",
+                name: { zh: "揭阳", en: "Jieyang" },
+                exhibition: { zh: "169家企业、346个展位（26个展区）", en: "169 enterprises, 346 booths (26 zones)" },
+                description: { zh: "本届广交会揭阳分团共有169家企业参展、参展企业共设346个展位，分布在26个展区。揭阳参展企业中高新技术企业、专精特新企业共70家，占参展企业总数的41.4%。参展产品涵盖五金、家用电器、餐厨用具、鞋类、内衣、食品、个人护理等特色优势产业领域。", en: "Jieyang had 169 enterprises with 346 booths across 26 zones. High-tech and specialized enterprises numbered 70, accounting for 41.4% of exhibitors. Products covered hardware, home appliances, kitchenware, footwear, underwear, food, and personal care." },
+                image: "./2.map/images/jieyang.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "揭阳五金产业亮相广交会", en: "Jieyang Hardware Industry at Canton Fair" }, url: "http://www.jieyang.gov.cn/xwdt/jyxw/content/post_1016054.html" }
+                ]
+            },
+            {
+                id: "shanwei",
+                name: { zh: "汕尾", en: "Shanwei" },
+                exhibition: { zh: "36家企业、74个展位", en: "36 enterprises, 74 booths" },
+                description: { zh: "本届广交会，汕尾市以36家优质企业、74个展位的阵容强势亮相。汕尾参展企业累计达成意向订单金额1.07亿美元，较上届增长17.44%，创近年新高。展品涵盖五金、电子、纺织服装等优势特色产业。防翻海钓船、工业无人机、电动开合花及智能感应花系列等产品备受关注。", en: "Shanwei debuted with 36 quality enterprises and 74 booths. Achieved $107 million in intended orders, up 17.44% from last session, setting a recent high. Products covered hardware, electronics, and textile garments. Anti-tip fishing boats, industrial drones, and smart flowers gained attention." },
+                image: "./2.map/images/shanwei.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "汕尾企业组团参展广交会", en: "Shanwei Enterprises Exhibit at Canton Fair" }, url: "https://www.shanwei.gov.cn/slhwz/rdgz/content/post_1246621.html" }
+                ]
+            },
+            {
+                id: "zhanjiang",
+                name: { zh: "湛江", en: "Zhanjiang" },
+                exhibition: { zh: "湛江参展企业共设展位346个（26个展区）", en: "Zhanjiang enterprises, 346 booths (26 zones)" },
+                description: { zh: "本届广交会，湛江线上线下累计揽获出口意向订单1.67亿美元，连续两届稳步增长。参展阵容中，高新技术和专精特新企业合计占比超六成，智能家电、高端装备等创新产品广受青睐。鸿智科技的冰饮系列斩获超千万美元订单，中新电气「野蜻蜓」智能房车成为现场热门。", en: "Zhanjiang achieved $167 million in export intended orders, growing steadily for two consecutive sessions. High-tech and specialized enterprises accounted for over 60%. Hongzhi Technology's cold beverage series secured orders exceeding $10 million. Zhongxin's 'Wild Dragonfly' smart RV became a hot item." },
+                image: "./2.map/images/zhanjiang.svg",
+                highlight: true,
+                news: [
+                    { title: { zh: "湛江企业广交会收获丰硕", en: "Zhanjiang Enterprises Achieve Results at Canton Fair" }, url: "https://www.gdzjdaily.com.cn/p/2959350.html" }
+                ]
+            },
+            {
+                id: "maoming",
+                name: { zh: "茂名", en: "Maoming" },
+                exhibition: { zh: "52家企业、96个展位（历史新高，品牌展位首次突破）", en: "52 enterprises, 96 booths (record high, first brand booths)" },
+                description: { zh: "本届广交会茂名市组织52家优质企业参展，96个展位数量创下历史新高。多家优质企业携「鱼家香」等自主品牌亮相。尤为值得一提的是，化橘红、白糖罂荔枝、高州桂圆肉三大国家地理标志保护产品首次以多元化形态参展。展品阵容覆盖小家电、劳保手套等传统优势产业，以及罗非鱼、沉香等特色领域。", en: "This session, Maoming organized 52 quality enterprises with 96 booths, a historical record. Many quality enterprises showcased their own brands. Three national geographical indication products including Huajuhong, Baitangying Litchi, and Gaozhou Longan debuted in diversified forms." },
+                image: "./2.map/images/maoming.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "茂名品牌首次亮相广交会", en: "Maoming Brands Debut at Canton Fair" }, url: "https://www.nfnews.com/content/voAp7BeK6R.html" }
+                ]
+            },
+            {
+                id: "yangjiang",
+                name: { zh: "阳江", en: "Yangjiang" },
+                exhibition: { zh: "166家企业参展", en: "166 enterprises" },
+                description: { zh: "本届广交会阳江市共166家企业参展。参展规模再扩大，参展企业数量较上届增长5%，涵盖通用机械、工具、餐厨用品、家居用品等18个领域。品牌展位占比超23%，十八子、王麻子、美珑美利、凌霄等知名企业携高端产品集中亮相。巧媳妇、福泰利等新锐企业首次参展，为外贸注入新活力。", en: "This session, Yangjiang had 166 enterprises, up 5% from last session, covering general machinery, tools, kitchenware, and household items across 18 fields. Brand booth share exceeded 23%. Famous brands like Shibazi, Wangmazi, and Meilongmeili showcased premium products." },
+                image: "./2.map/images/yangjiang.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "阳江刀剪闪耀广交会", en: "Yangjiang Knives Shine at Canton Fair" }, url: "http://www.yangjiang.gov.cn/yj/ywdt/bmzx/content/post_935490.html" }
+                ]
+            },
+            {
+                id: "yunfu",
+                name: { zh: "云浮", en: "Yunfu" },
+                exhibition: { zh: "43家企业、120个展位", en: "43 enterprises, 120 booths" },
+                description: { zh: "本届广交会，云浮市组织了43家企业参与线下展览，展位数量达到120个，实现五个县（市、区）均有企业参展，全域参展新突破。石材、不锈钢餐厨具、新材料、厨房用品等九大品类展品集中亮相。欧铂利新材料、德昇贸易等多家企业首次参展，以创新材料、绿色产品抢占市场先机。", en: "This session, Yunfu organized 43 enterprises with 120 booths, achieving a breakthrough with enterprises from all five counties and districts. Nine major categories including stone, stainless steel kitchenware, new materials, and kitchen supplies were showcased." },
+                image: "./2.map/images/yunfu.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "云浮石材产业亮相广交会", en: "Yunfu Stone Industry at Canton Fair" }, url: "https://www.yunfu.gov.cn/zxzx/bmdt/content/post_2002811.html" }
+                ]
+            },
+            {
+                id: "qingyuan",
+                name: { zh: "清远", en: "Qingyuan" },
+                exhibition: { zh: "78家企业、161个展位", en: "78 enterprises, 161 booths" },
+                description: { zh: "本届广交会清远市共有78家企业参展，展位161个，其中高新技术企业、专精特新企业等优质企业占52.6%。各参展企业立足科技创新，带来家用电器、五金工具、新能源、机械设备等多元展品。清远还以「广货行天下 清远好风土」为主题在音乐美食节嘉年华设展，将一批「粤味珍品·清远好食材」悉数呈现。", en: "This session, Qingyuan had 78 enterprises with 161 booths. High-tech and specialized quality enterprises accounted for 52.6%. Enterprises showcased home appliances, hardware tools, new energy, and mechanical equipment. Qingyuan also set up exhibitions themed 'Guangzhou Products, Qingyuan Specialty'." },
+                image: "./2.map/images/qingyuan.svg",
+                highlight: false,
+                news: [
+                    { title: { zh: "清远企业闪耀广交会", en: "Qingyuan Enterprises Shine at Canton Fair" }, url: "http://epaper.qyrb.com:7777/content/20260415/ArticelA01004ZG.htm" }
+                ]
+            }
+        ];
+
+        /* ==================== 时间轴数据 ==================== */
+        // 数据来源: ./3.timeline/时间长卷（新）.docx
+        // 图片路径: ./3.timeline/images/
+        const timelineData = [
+            // ========== 板块一：启动 ==========
+            {
+                id: 2,
+                category: "start",
+                date: { zh: "2026年春 | 第139届", en: "Spring 2026 | 139th Session" },
+                title: { zh: "第139届广交会启动", en: "139th Canton Fair Launch" },
+                description: { zh: "第139届广交会在第138届基础上进一步升级，首次在第一期增设<span class='key-word'>服务机器人</span>专区，新增<span class='key-word'>消费级无人机</span>、<span class='key-word'>智能穿戴</span>、<span class='key-word'>新型显示技术</span>等<span class='highlight-red'>9个</span>全新细分展区，为全球客商打造更前沿的采购场景。", en: "The 139th Canton Fair upgraded from the 138th session. First phase added a service robot zone and 9 new specialized exhibition areas including consumer drones, smart wearables, and new display technologies." },
+                image: "./3.timeline/images/1.jpg",
+                links: [
+                    { title: "商务部第139届广交会专题发布会", url: "https://www.gz.gov.cn/zt/zgjckspjyh/xczj/content/post_10765407.html" },
+                    { title: "央视网第139届广交会开幕报道", url: "https://local.cctv.com/2026/04/15/ARTIWNOnql7aHQ7pWlgiuFCd260415.shtml" },
+                    { title: "广州日报记者抢先探营", url: "https://www.gz.gov.cn/zt/zgjckspjyh/xczj/content/mpost_10768001.html" },
+                    { title: "中国经济网预登记数据", url: "http://district.ce.cn/newarea/roll/202604/t20260403_2879887.shtml" }
+                ]
+            },
+            // ========== 板块二：高峰 ==========
+            {
+                id: 3,
+                category: "peak",
+                date: { zh: "第139届开幕首日", en: "139th Opening Day" },
+                title: { zh: "第139届开幕盛况", en: "139th Grand Opening" },
+                description: { zh: "第139届广交会开幕即迎「人潮高峰」，本届吸引<span class='key-number'>214个</span>国家和地区、<span class='key-number'>31.4万名</span>境外采购商到会，较第138届再增<span class='highlight-red'>1.1%</span>。其中广州<span class='key-number'>907家</span>、深圳超<span class='key-number'>1200家</span>广东企业组团参展，首次增设的<span class='key-word'>智能穿戴</span>、<span class='key-word'>消费级无人机</span>、<span class='key-word'>服务机器人</span>等<span class='highlight-red'>9大</span>新专区人气最旺。", en: "The 139th Canton Fair opening attracted 314,000 foreign buyers from 214 countries and regions, up 1.1% from the 138th session. Guangzhou 907, Shenzhen over 1,200 Guangdong enterprises exhibited. Nine new zones including smart wearables, consumer drones, and service robots were most popular." },
+                image: "./3.timeline/images/2.jpg",
+                links: [
+                    { title: "央广网现场到会人数报道", url: "http://m.toutiao.com/group/7636795254221357606/" },
+                    { title: "每日经济新闻记者直击", url: "http://xhslink.com/o/4vBLvMAlov7" },
+                    { title: "国际在线境外采购商报道", url: "https://gd.cri.cn/2026-05-06/7c712d01-5ef4-4c52-9006-1b4f576e7176.html" }
+                ]
+            },
+            // ========== 板块三：高光亮点 ==========
+            {
+                id: 5,
+                category: "highlights",
+                date: { zh: "高光时刻", en: "Highlight Moment" },
+                title: { zh: "科技向善，照亮跨越国界的温暖瞬间", en: "Technology for Good: Heartwarming Moments" },
+                description: { zh: "在第139届广交会的<span class='key-word'>康复科技展区</span>，一位独腿外国友人试穿了国产<span class='key-word'>外骨骼</span>，重新站立行走，同行的朋友当场热泪盈眶。这一幕让冰冷的科技展品展现了<span class='highlight-bold'>科技向善</span>的力量，「<span class='highlight-bold'>中国智造</span>」的温度被全球看见。", en: "At the 139th Canton Fair's rehabilitation tech zone, a one-legged foreign visitor tried on a domestically-made exoskeleton and stood up to walk again, bringing tears to her companions. This moment showed technology for good, making 'Made in China' go viral globally." },
+                image: "./3.timeline/images/3.jpg",
+                links: [
+                    { title: "央视新闻抖音报道", url: "https://v.douyin.com/sDskNy5IMG0/" },
+                    { title: "央视网小红书新闻", url: "http://xhslink.com/o/2tZspV8CSyr" },
+                    { title: "中国新闻网暖心一幕", url: "http://m.chinanews.com/wap/detail/chs/zw/10607862.shtml" },
+                    { title: "China Daily全英文报道", url: "https://www.chinadaily.com.cn/a/202604/24/WS69eb6f23a310d6866eb4571a_1.html" }
+                ]
+            },
+            {
+                id: 6,
+                category: "highlights",
+                date: { zh: "热点瞬间", en: "Hot Moment" },
+                title: { zh: "张雪机车首秀「出圈」，冠军车型引爆全场", en: "Zhangxue Motors Debut Goes Viral" },
+                description: { zh: "第139届广交会开幕首日，<span class='key-word'>张雪机车</span>携<span class='key-word'>WSBK葡萄牙站冠军车820RR</span>等<span class='highlight-red'>5款</span>主力车型首次参展，成为全场现象级热点。品牌夺冠后<span class='highlight-red'>10天</span>内国内订单破<span class='key-number'>2万台</span>，海外订单同步激增。", en: "At the 139th Canton Fair opening day, Zhangxue Motors debuted with WSBK Portugal champion bike 820RR and 4 other models, becoming a phenomenon. Within 10 days after winning the championship, domestic orders exceeded 20,000 units, with overseas orders surging simultaneously." },
+                image: "./3.timeline/images/4.jpg",
+                links: [
+                    { title: "光明网圈粉全球客商", url: "https://m.gmw.cn/2026-04/18/content_1304423051.htm" },
+                    { title: "新华网首秀受青睐", url: "http://www.xinhuanet.com/photo/20260417/c14e938723694bc38285a4dd8a2a4299/c.html" },
+                    { title: "广州日报冠军车型报道", url: "https://gzdaily.dayoo.com/h5/html5/2026-04/16/content_867_906963.htm" }
+                ]
+            },
+            // ========== 板块四：收官 ==========
+            {
+                id: 7,
+                category: "conclusion",
+                date: { zh: "核心数据成果", en: "Core Data Results" },
+                title: { zh: "出口意向成交额再创新高", en: "Export Intended Deals Hit New High" },
+                description: { zh: "第139届广交会现场意向出口成交达<span class='key-number'>257亿美元</span>，较第138届再增<span class='highlight-red'>1.1%</span>。共有来自<span class='key-number'>220个</span>国家和地区的<span class='key-number'>31.4万名</span>境外采购商到会，再创历史新高。<span class='key-number'>407家</span>头部采购企业、<span class='key-number'>154家</span>境外工商机构参会。", en: "The 139th session reached $25.7B in intended exports, up 1.1% from the 138th session. 314,000 foreign buyers from 220 countries and regions, a new historical record. 407 top purchasing enterprises, 154 foreign business institutions attended." },
+                image: "./3.timeline/images/5.jpg",
+                links: [
+                    { title: "广州日报第139届收官报道", url: "https://huacheng.gz-cmc.com/pages/2026/05/06/884361ca05cb4119925eb5b868b01922.html" },
+                    { title: "央视新闻第139届官方收官报道", url: "http://m.toutiao.com/group/7636719482291683859/" },
+                    { title: "人民网第139届闭幕报道", url: "https://m.toutiao.com/article/7636949832820605440/" }
+                ]
+            },
+            {
+                id: 8,
+                category: "conclusion",
+                date: { zh: "客商来源结构", en: "Buyer Source Structure" },
+                title: { zh: "全球客商汇聚，「一带一路」共建国家占比超六成", en: "Global Buyers, BRI Countries Over 60%" },
+                description: { zh: "采购商来自全球<span class='key-number'>220个</span>国家和地区，「<span class='key-word'>一带一路</span>」共建国家占比超六成（<span class='key-number'>16.5万人</span>）；<span class='key-word'>中东</span>国家客商到会<span class='key-number'>3.4万人</span>，同比增幅<span class='highlight-red'>32.6%</span>；<span class='key-word'>欧美</span>国家客商到会<span class='key-number'>5.4万人</span>，同比增幅<span class='highlight-red'>8.2%</span>。", en: "Buyers from 220 countries/regions globally. BRI countries over 60% (165,000 people); Middle East buyers 34,000, up 32.6%; European and American buyers 54,000, up 8.2%." },
+                image: "./3.timeline/images/6.jpg",
+                links: [
+                    { title: "央视新闻抖音多国采购商盛赞", url: "https://v.douyin.com/JIqsZaRpQ0w/" }
+                ]
+            },
+            {
+                id: 9,
+                category: "conclusion",
+                date: { zh: "创新成果亮点", en: "Innovation Results" },
+                title: { zh: "「新绿智」产品引领全球贸易创新风向标", en: "New, Green & Smart Products Lead Innovation" },
+                description: { zh: "第139届广交会现场展示<span class='key-number'>465万件</span>展品，「<span class='key-word'>新绿智</span>」产品占比均超<span class='highlight-red'>20%</span>，举办<span class='key-number'>665场</span>新品发布活动，超六成产品应用创新技术。<span class='highlight-bold'>数字化、智能化、绿色化</span>产品成为成交主力。", en: "The 139th session showcased 4.65 million exhibits, with new/green/smart products over 20%, 665 new product launches, over 60% applying innovative tech. Digital, intelligent, green products became the main force of deals." },
+                image: "./3.timeline/images/7.jpg",
+                links: [
+                    { title: "广州日报荷兰客商追厂看机器人", url: "http://news.dayoo.com/guangzhou/202605/06/139995_54956228.htm" }
+                ]
+            }
+        ];
+
+        /* ==================== 舆情数据 ==================== */
+        // 数据来源: ./4.sentiment/广交会舆情洞察.docx
+        // 图片路径: ./4.sentiment/images/
+        const sentimentData = [
+            {
+                id: 1,
+                category: "overview",
+                icon: "声量",
+                title: { zh: "声量概览", en: "Voice Overview" },
+                shortDesc: { zh: "影响力指数83.0，超过97%的各类事件", en: "Influence index 83.0, exceeding 97% of all events" },
+                fullDesc: { zh: "<span class='key-number'>83.0</span>的影响力指数，超过<span class='highlight-red'>97%</span>的各类事件和<span class='highlight-red'>97%</span>的社会类事件，说明第139届广交会已不仅是行业事件，而是具有广泛社会影响力的重大公共话题。这一指数与重大政策发布、突发事件或大型体育赛事处于同一量级，反映出广交会作为「<span class='highlight-bold'>中国第一展</span>」的国民关注度。", en: "The influence index of 83.0 exceeds 97% of all events and 97% of social events, indicating the 139th Canton Fair is not just an industry event but a major public topic with broad social impact. This index is at the same level as major policy releases, emergencies, or large sports events." },
+                image: "./4.sentiment/images/img1.svg",
+                keywords: { zh: ["影响力指数83.0", "超过97%事件", "微博85.5", "网媒81.8"], en: ["Influence Index 83.0", "Exceeds 97% Events", "Weibo 85.5", "Online Media 81.8"] },
+                stats: [
+                    { value: "83.0", label: { zh: "影响力指数", en: "Influence Index" } },
+                    { value: "97%+", label: { zh: "超过事件", en: "Exceeding Events" } },
+                    { value: "微博85.5", label: { zh: "微博平台指数", en: "Weibo Index" } }
+                ]
+            },
+            {
+                id: 2,
+                category: "media",
+                icon: "媒体",
+                title: { zh: "媒体参与情况", en: "Media Participation" },
+                shortDesc: { zh: "140家重要媒体，财经类媒体参与度「破表」", en: "140 important media, financial media participation 'off charts'" },
+                fullDesc: { zh: "<span class='key-number'>140家</span>重要媒体覆盖了<span class='key-word'>广电、报纸、网站、客户端</span>等多形态，构成<span class='highlight-bold'>全媒体传播矩阵</span>。<span class='key-word'>财经类</span>媒体参与度高于<span class='highlight-red'>98%</span>的事件，且高于<span class='highlight-red'>100%</span>的社会类事件（即排名第一）。<span class='key-word'>科技类</span>媒体参与度高于<span class='highlight-red'>97%</span>的社会类事件。本届广交会<span class='key-word'>「新绿智」特色</span>、<span class='key-word'>机器人</span>、<span class='key-word'>无人机</span>、<span class='key-word'>AI导航</span>等科技元素密集，吸引了大量科技媒体跨界报道。", en: "140 important media covered various formats including broadcasting, newspapers, websites, and apps, forming a omnimedia communication matrix. Financial media participation exceeded 98% of events and ranked #1 among social events. Tech media participation exceeded 97% of social events." },
+                image: "./4.sentiment/images/img2.png",
+                keywords: { zh: ["140家媒体", "财经类破表", "科技类极高", "全矩阵传播"], en: ["140 Media Outlets", "Finance Media #1", "Tech Media High", "Omnimedia Matrix"] },
+                stats: [
+                    { value: "140", label: { zh: "重要媒体数量", en: "Important Media" } },
+                    { value: "98%+", label: { zh: "财经媒体参与度", en: "Financial Media" } },
+                    { value: "97%+", label: { zh: "科技媒体参与度", en: "Tech Media" } }
+                ]
+            },
+            {
+                id: 3,
+                category: "peak",
+                icon: "热度",
+                title: { zh: "事件热度峰值", en: "Sentiment Peak" },
+                shortDesc: { zh: "4月16日9时热度达8433，呈现「双峰或多峰」形态", en: "April 16 9AM sentiment reached 8,433, showing multi-peak pattern" },
+                fullDesc: { zh: "峰值时间：<span class='key-word'>2026年4月16日 09:00</span>，峰值热度数值：<span class='key-number'>8,433</span>。热度从峰值前一日（4月15日）晚间开始攀升，到16日9时登顶后缓慢回落，呈现<span class='key-word'>「坡形缓降」</span>而非「断崖式下跌」。广交会线下会期为<span class='key-word'>4月15日至5月5日</span>（共<span class='highlight-red'>21天</span>），舆情热度几乎覆盖整个展期，体现了展会类舆情<span class='highlight-bold'>「长尾效应」</span>显著的特点。", en: "Peak time: April 16, 2026 at 9:00 AM with sentiment value of 8,433. The heat climbed from the evening of April 15, peaked at 9:00 AM on the 16th, then slowly declined but remained at high levels through the evening, showing a gradual slope rather than a cliff-like drop." },
+                image: "./4.sentiment/images/img3.svg",
+                keywords: { zh: ["峰值8433", "双峰形态", "长尾效应", "持续21天"], en: ["Peak 8,433", "Multi-peak Pattern", "Long Tail Effect", "21 Days"] },
+                stats: [
+                    { value: "8,433", label: { zh: "峰值热度", en: "Peak Value" } },
+                    { value: "4/16 9:00", label: { zh: "峰值时间", en: "Peak Time" } },
+                    { value: "21天", label: { zh: "展期覆盖", en: "Duration" } }
+                ]
+            },
+            {
+                id: 7,
+                category: "analysis",
+                icon: "产品",
+                title: { zh: "「新绿智」产品亮点", en: "New, Green & Smart Products" },
+                shortDesc: { zh: "新产品23%、绿色产品22%、自主知识产权25%", en: "New 23%, Green 22%, IP products 25%" },
+                fullDesc: { zh: "本届广交会现场展示超<span class='key-number'>465万件</span>展品，其中<span class='key-word'>新产品</span>占比<span class='highlight-red'>23%</span>、<span class='key-word'>绿色产品</span>占比<span class='highlight-red'>22%</span>、<span class='key-word'>自主知识产权</span>产品占比<span class='highlight-red'>25%</span>。举办<span class='key-number'>665场</span>新品发布活动，超六成产品应用创新技术。拥有<span class='key-word'>专精特新、单项冠军</span>等称号的优质企业超<span class='key-number'>1.1万家</span>，同比增长<span class='highlight-red'>5.1%</span>，<span class='highlight-red'>61%</span>的企业在生产或服务中应用了<span class='key-word'>工业互联网、人工智能、5G</span>等新技术新模式。", en: "This session showcased over 4.65 million exhibits, with new products at 23%, green products at 22%, and products with independent intellectual property at 25%. 665 new product launch events were held, over 60% of products applying innovative technologies. Over 11,000 quality enterprises with 'specialized, refined, innovative' and champion titles, up 5.1% YoY." },
+                image: "./4.sentiment/images/img4.png",
+                keywords: { zh: ["新产品23%", "绿色22%", "自主知识产权25%", "665场发布"], en: ["New 23%", "Green 22%", "IP 25%", "665 Launches"] },
+                stats: [
+                    { value: "23%", label: { zh: "新产品占比", en: "New Products" } },
+                    { value: "22%", label: { zh: "绿色产品", en: "Green Products" } },
+                    { value: "25%", label: { zh: "自主知识产权", en: "IP Products" } }
+                ]
+            },
+            {
+                id: 8,
+                category: "topics",
+                icon: "专区",
+                title: { zh: "首次设立九大专区", en: "9 New Specialized Zones" },
+                shortDesc: { zh: "智能穿戴、无人机等9个专区，参展企业约670家", en: "9 zones including smart wearables, drones, ~670 enterprises" },
+                fullDesc: { zh: "首次增设<span class='key-word'>智能穿戴</span>、<span class='key-word'>显示技术</span>、<span class='key-word'>消费级无人机</span>、<span class='key-word'>农用无人机</span>、<span class='key-word'>集成房屋</span>及庭院设施、功能与科技面料、时尚饰品、竹木餐具及家居用品共<span class='highlight-red'>9个</span>专区，参展企业约<span class='key-number'>670家</span>，展位超<span class='key-number'>1300个</span>。展品专区总数增至<span class='key-number'>179个</span>，精准对接全球产业链升级需求。", en: "Nine new zones debuted including smart wearables, display technology, consumer drones, agricultural drones, integrated housing, functional fabrics, fashion accessories, bamboo-wood cutlery and household products. About 670 exhibiting companies with over 1,300 booths. Total exhibition zones increased to 179, precisely matching global industrial chain upgrade needs." },
+                image: "./4.sentiment/images/img5.jpg",
+                keywords: { zh: ["九大专区", "670家企业", "1300+展位", "179个专区"], en: ["9 New Zones", "670+ Companies", "1,300+ Booths", "179 Total Zones"] },
+                stats: [
+                    { value: "9个", label: { zh: "新设专区", en: "New Zones" } },
+                    { value: "670+", label: { zh: "参展企业", en: "Companies" } },
+                    { value: "179", label: { zh: "专区总数", en: "Total Zones" } }
+                ]
+            },
+            {
+                id: 9,
+                category: "topics",
+                icon: "服务",
+                title: { zh: "智慧服务全面升级", en: "Smart Service Upgrade" },
+                shortDesc: { zh: "App功能扩至26项，14个AI场景，导航覆盖65%展厅", en: "App expanded to 26 features, 14 AI scenarios, navigation covers 65%" },
+                fullDesc: { zh: "广交会App功能已扩至26项，新推出14个AI应用场景，展位级智慧导航覆盖25个展厅、65%的展会面积，55.3万人使用广交会APP，31.7万人次体验展位级导航。首次设立7个采购商一站式服务中心，提供现场咨询、展品查询、贸易配对、翻译等零距离服务。贸易服务展区引入中信保、顺丰、中检等210家机构，提供智慧仓储、AI质检、智能供应链等定制化服务。", en: "Canton Fair App expanded to 26 features with 14 new AI scenarios. Booth-level smart navigation covers 25 halls and 65% of exhibition area. 553,000 people used the app, 317,000 experienced booth navigation. Seven one-stop service centers for buyers were established for the first time. 210 institutions including CITIC Insurance, SF Express, and CCIC participated in the trade service exhibition area." },
+                image: "./4.sentiment/images/img6.png",
+                keywords: { zh: ["App26项", "14个AI场景", "55.3万人使用", "210家机构"], en: ["26 App Features", "14 AI Scenarios", "553K Users", "210 Institutions"] },
+                stats: [
+                    { value: "26项", label: { zh: "App功能", en: "App Features" } },
+                    { value: "55.3万", label: { zh: "APP用户", en: "App Users" } },
+                    { value: "65%", label: { zh: "导航覆盖", en: "Navigation Coverage" } }
+                ]
+            }
+        ];
+
+        /* ==================== 链接数据 ==================== */
+        const linksData = [
+            {
+                icon: "官网",
+                title: { zh: "广交会官方网站", en: "Official Canton Fair Website" },
+                url: "https://www.cantonfair.org.cn",
+                desc: { zh: "了解最新展会资讯", en: "Latest exhibition information" }
+            },
+            {
+                icon: "APP",
+                title: { zh: "广交会官方APP", en: "Canton Fair Official APP" },
+                url: "https://www.cantonfair.org.cn/app",
+                desc: { zh: "掌上广交会", en: "Canton Fair in Your Pocket" }
+            },
+            {
+                icon: "新闻",
+                title: { zh: "新闻动态", en: "News & Updates" },
+                url: "https://www.cantonfair.org.cn/news",
+                desc: { zh: "展会最新动态", en: "Latest exhibition news" }
+            },
+            {
+                icon: "云展",
+                title: { zh: "云上展厅", en: "Cloud Exhibition Hall" },
+                url: "https://online.cantonfair.org.cn",
+                desc: { zh: "线上参展看展", en: "Online exhibition viewing" }
+            }
+        ];
+
+        /* ==================== 语言切换功能 ==================== */
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // 更新语言按钮状态
+            document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            
+            // 添加过渡效果
+            document.querySelector('.lang-content')?.classList.add('switching');
+            
+            setTimeout(() => {
+                // 更新所有带 data-lang 属性的元素
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    if (i18n[lang][key]) {
+                        el.innerHTML = i18n[lang][key];
+                    }
+                });
+                
+                // 重新渲染动态内容
+                renderTimeline();
+                renderSentimentGrid();
+                renderLinksGrid();
+                updateMapLabels();
+                
+                document.querySelector('.lang-content')?.classList.remove('switching');
+            }, 150);
+        }
+
+        function toggleLanguage() {
+            setLanguage(currentLang === 'zh' ? 'en' : 'zh');
+        }
+
+        /* ==================== 视频播放功能 ==================== */
+        function toggleVideo() {
+            const video = document.getElementById('mainVideo');
+            const playBtn = document.getElementById('playBtn');
+            
+            if (video.paused) {
+                video.play();
+                playBtn.classList.add('playing');
+            } else {
+                video.pause();
+                playBtn.classList.remove('playing');
+            }
+        }
+
+        // 只在播放按钮上绑定点击事件，避免与视频原生控件冲突
+        document.getElementById('playBtn')?.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleVideo();
+        });
+
+        /* ==================== 地图加载与交互 ==================== */
+        async function loadProvinceMap() {
+            // 直接使用简化版地图（程序生成的矢量路径）
+            createSimplifiedMap();
+        }
+        
+        function handleCityHover(element, isHover) {
+            element.style.cursor = 'pointer';
+        }
+
+        function createSimplifiedMap() {
+            const mapGroup = document.getElementById('mapGroup');
+            
+            // 使用橙红色填充
+            const cityColor = '#ff6b35';
+            
+            // 定义21个地级市的路径和位置（交叠状态）
+            const cities = [
+                { id: 'guangzhou', name: { zh: '广州', en: 'Guangzhou' }, path: 'M265,218 Q290,200 315,198 L342,205 L350,232 L348,260 L322,282 L288,278 L268,258 L260,238 Z', x: 302, y: 242 },
+                { id: 'shenzhen', name: { zh: '深圳', en: 'Shenzhen' }, path: 'M348,278 L378,275 L388,295 L380,315 L352,318 L340,300 Z', x: 362, y: 295 },
+                { id: 'dongguan', name: { zh: '东莞', en: 'Dongguan' }, path: 'M342,250 L368,245 L378,265 L372,285 L348,288 L338,270 Z', x: 358, y: 268 },
+                { id: 'foshan', name: { zh: '佛山', en: 'Foshan' }, path: 'M232,258 Q258,242 282,242 L298,265 L295,288 L262,295 L232,282 L228,268 Z', x: 262, y: 268 },
+                { id: 'zhongshan', name: { zh: '中山', en: 'Zhongshan' }, path: 'M272,292 L312,288 L322,308 L312,328 L282,332 L268,315 Z', x: 295, y: 308 },
+                { id: 'zhuhai', name: { zh: '珠海', en: 'Zhuhai' }, path: 'M278,328 L308,325 L318,345 L308,358 L278,362 L268,345 Z', x: 292, y: 342 },
+                { id: 'jiangmen', name: { zh: '江门', en: 'Jiangmen' }, path: 'M198,302 Q222,288 252,285 L268,315 L262,348 L232,362 L192,352 L182,328 Z', x: 228, y: 328 },
+                { id: 'huizhou', name: { zh: '惠州', en: 'Huizhou' }, path: 'M358,198 Q388,185 422,190 L442,215 L438,252 L402,268 L368,262 L352,238 Z', x: 402, y: 228 },
+                { id: 'zhaoqing', name: { zh: '肇庆', en: 'Zhaoqing' }, path: 'M178,198 Q212,180 248,182 L262,215 L258,258 L218,272 L178,262 L168,232 Z', x: 218, y: 228 },
+                { id: 'qingyuan', name: { zh: '清远', en: 'Qingyuan' }, path: 'M248,118 Q288,102 328,108 L348,142 L338,182 L288,192 L242,188 L232,152 Z', x: 288, y: 152 },
+                { id: 'shaoguan', name: { zh: '韶关', en: 'Shaoguan' }, path: 'M282,52 Q342,38 398,48 L422,88 L412,138 L358,152 L298,145 L270,112 Z', x: 352, y: 98 },
+                { id: 'heyuan', name: { zh: '河源', en: 'Heyuan' }, path: 'M368,138 Q408,122 442,132 L458,168 L448,208 L402,218 L362,212 L352,178 Z', x: 408, y: 172 },
+                { id: 'meizhou', name: { zh: '梅州', en: 'Meizhou' }, path: 'M402,118 Q448,102 482,118 L498,158 L488,198 L438,212 L398,202 L388,162 Z', x: 442, y: 162 },
+                { id: 'shanwei', name: { zh: '汕尾', en: 'Shanwei' }, path: 'M388,242 Q422,232 458,242 L470,268 L462,298 L422,308 L392,298 L382,272 Z', x: 428, y: 272 },
+                { id: 'jieyang', name: { zh: '揭阳', en: 'Jieyang' }, path: 'M432,242 Q462,232 488,245 L500,275 L490,305 L452,312 L430,295 L428,268 Z', x: 465, y: 278 },
+                { id: 'chaozhou', name: { zh: '潮州', en: 'Chaozhou' }, path: 'M468,212 Q498,202 520,218 L530,248 L520,278 L488,285 L462,272 L460,242 Z', x: 492, y: 248 },
+                { id: 'shantou', name: { zh: '汕头', en: 'Shantou' }, path: 'M448,288 Q478,278 502,292 L515,318 L508,345 L468,352 L445,335 L442,308 Z', x: 478, y: 318 },
+                { id: 'yangjiang', name: { zh: '阳江', en: 'Yangjiang' }, path: 'M118,312 Q158,298 192,305 L208,338 L200,372 L152,382 L108,375 L98,342 Z', x: 155, y: 342 },
+                { id: 'maoming', name: { zh: '茂名', en: 'Maoming' }, path: 'M68,298 Q102,282 138,292 L152,328 L145,368 L95,378 L52,362 L48,328 Z', x: 102, y: 332 },
+                { id: 'zhanjiang', name: { zh: '湛江', en: 'Zhanjiang' }, path: 'M58,368 Q102,352 148,365 L168,402 L158,442 L98,458 L38,442 L28,402 Z', x: 102, y: 408 },
+                { id: 'yunfu', name: { zh: '云浮', en: 'Yunfu' }, path: 'M158,228 Q192,212 228,220 L242,258 L235,298 L192,308 L152,298 L148,268 Z', x: 192, y: 265 }
+            ];
+            
+            let html = '';
+            cities.forEach(city => {
+                html += `
+                    <path class="city-path" 
+                          data-city="${city.id}" 
+                          d="${city.path}"
+                          fill="${cityColor}"
+                          stroke="#ffffff"
+                          stroke-width="1"
+                          onclick="handleCityClick(this)"
+                          onmouseenter="handleCityHover(this, true)"
+                          onmouseleave="handleCityHover(this, false)"/>
+                    <text class="city-label" 
+                          x="${city.x}" y="${city.y}" 
+                          fill="white"
+                          font-size="11"
+                          text-anchor="middle">${city.name[currentLang]}</text>
+                `;
+            });
+            
+            mapGroup.innerHTML = html;
+        }
+
+        function getCityIdFromPath(path) {
+            // 尝试从路径中识别城市
+            // 这个方法可以根据实际的SVG path数据进行调整
+            return path.getAttribute('data-city') || null;
+        }
+
+        function handleCityClick(pathElement) {
+            const cityId = pathElement.getAttribute('data-city');
+            if (!cityId) return;
+            
+            const city = citiesData.find(c => c.id === cityId);
+            if (city) {
+                openMapModal(city);
+            }
+        }
+
+        function openMapModal(city) {
+            const modal = document.getElementById('mapModal');
+            const cityName = document.getElementById('modalCityName');
+            const cityDesc = document.getElementById('modalCityDesc');
+            const cityImage = document.getElementById('modalCityImage');
+            const newsList = document.getElementById('modalNewsList');
+            
+            // 设置城市信息
+            cityName.textContent = city.name[currentLang];
+            
+            // 构建完整描述（包含参展情况和详细介绍）
+            let fullDesc = '';
+            if (city.exhibition) {
+                fullDesc += `<p class="city-exhibition"><strong>${i18n[currentLang]['exhibition-label']}</strong>${city.exhibition[currentLang]}</p>`;
+            }
+            fullDesc += `<p class="city-intro">${city.description[currentLang]}</p>`;
+            cityDesc.innerHTML = fullDesc;
+            
+            // 弹窗中显示图片（预加载避免闪烁）
+            cityImage.style.display = 'none';
+            const tempImg = new Image();
+            tempImg.onload = function() {
+                cityImage.src = city.image;
+                cityImage.alt = city.name[currentLang];
+                cityImage.style.display = 'block';
+            };
+            tempImg.src = city.image;
+            
+            // 生成新闻/链接列表
+            newsList.innerHTML = '';
+            if (city.news && city.news.length > 0) {
+                city.news.forEach(news => {
+                    const newsItem = document.createElement('a');
+                    newsItem.className = 'modal-news-item';
+                    newsItem.href = news.url;
+                    newsItem.target = '_blank';
+                    newsItem.rel = 'noopener noreferrer';
+                    newsItem.innerHTML = `
+                        <h4>${news.title[currentLang]}</h4>
+                        <p>${currentLang === 'zh' ? '点击阅读全文' : 'Click to read more'}</p>
+                    `;
+                    newsList.appendChild(newsItem);
+                });
+            } else {
+                newsList.innerHTML = `<p style="color:var(--charcoal);text-align:center;padding:var(--space-lg);font-size:13px;">${currentLang === 'zh' ? '暂无相关报道链接' : 'No related news links'}</p>`;
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMapModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateMapLabels() {
+            // 重新渲染地图以更新城市标签语言
+            createSimplifiedMap();
+        }
+
+        /* ==================== 时间轴渲染（四大板块） ==================== */
+        function renderTimeline() {
+            const container = document.getElementById('timelineGrid');
+            container.innerHTML = '';
+            
+            // 定义四大板块
+            const categories = {
+                start: {
+                    zh: { name: '启动', icon: '1' },
+                    en: { name: 'Launch', icon: '1' }
+                },
+                peak: {
+                    zh: { name: '高峰', icon: '2' },
+                    en: { name: 'Peak', icon: '2' }
+                },
+                highlights: {
+                    zh: { name: '高光亮点', icon: '3' },
+                    en: { name: 'Highlights', icon: '3' }
+                },
+                conclusion: {
+                    zh: { name: '收官', icon: '4' },
+                    en: { name: 'Conclusion', icon: '4' }
+                }
+            };
+            
+            const categoryOrder = ['start', 'peak', 'highlights', 'conclusion'];
+            
+            categoryOrder.forEach((catId) => {
+                const catItems = timelineData.filter(item => item.category === catId);
+                if (catItems.length === 0) return;
+                
+                const catInfo = categories[catId];
+                
+                // 创建板块容器
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'timeline-category';
+                
+                // 板块标题
+                const headerHtml = `
+                    <div class="timeline-category-header">
+                        <div class="timeline-category-icon">${catInfo[currentLang].icon}</div>
+                        <div class="timeline-category-title">${catInfo[currentLang].name}</div>
+                    </div>
+                `;
+                
+                // 时间轴项目
+                let timelineHtml = '<div class="timeline">';
+                catItems.forEach((item) => {
+                    timelineHtml += `
+                        <div class="timeline-item" onclick="openTimelineModal(${JSON.stringify(item).replace(/"/g, '&quot;')})">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">${item.date[currentLang]}</div>
+                                <div class="timeline-title">${item.title[currentLang]}</div>
+                                <div class="timeline-desc">${item.description[currentLang]}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                timelineHtml += '</div>';
+                
+                categoryDiv.innerHTML = headerHtml + timelineHtml;
+                container.appendChild(categoryDiv);
+            });
+        }
+
+        function openTimelineModal(item) {
+            const modal = document.getElementById('timelineModal');
+            const title = document.getElementById('timelineModalTitle');
+            const date = document.getElementById('timelineModalDate');
+            const desc = document.getElementById('timelineModalDesc');
+            const image = document.getElementById('timelineModalImage');
+            const linkContainer = document.getElementById('timelineModalLinkContainer');
+            
+            title.textContent = item.title[currentLang];
+            date.textContent = item.date[currentLang];
+            desc.innerHTML = item.description[currentLang];
+            
+            // 弹窗中显示图片（预加载避免闪烁）
+            if (item.image) {
+                image.style.display = 'none';
+                const tempImg = new Image();
+                tempImg.onload = function() {
+                    image.src = item.image;
+                    image.alt = item.title[currentLang];
+                    image.style.display = 'block';
+                };
+                tempImg.src = item.image;
+            } else {
+                image.style.display = 'none';
+            }
+            
+            // 生成链接列表
+            if (linkContainer) {
+                if (item.links && item.links.length > 0) {
+                    linkContainer.innerHTML = item.links.map(link => 
+                        `<a href="${link.url}" target="_blank" class="timeline-link-item">
+                            <span class="link-title">${link.title}</span>
+                            <span class="link-arrow">→</span>
+                        </a>`
+                    ).join('');
+                } else {
+                    linkContainer.innerHTML = '';
+                }
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTimelineModal() {
+            const modal = document.getElementById('timelineModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        /* ==================== 舆情卡片渲染（按模块分类） ==================== */
+        function renderSentimentGrid() {
+            const container = document.getElementById('sentimentGrid');
+            container.innerHTML = '';
+            
+            // 定义舆情板块分类
+            const sentimentCategories = {
+                overview: { zh: '一、声量概览', en: 'Overview' },
+                media: { zh: '二、媒体参与', en: 'Media' },
+                peak: { zh: '三、热度峰值', en: 'Peak Heat' },
+                analysis: { zh: '四、舆情观察', en: 'Sentiment Analysis' },
+                topics: { zh: '五、热词议题', en: 'Hot Topics' }
+            };
+            
+            // 按分类分组数据
+            const categoryOrder = ['overview', 'media', 'peak', 'analysis', 'topics'];
+            
+            categoryOrder.forEach((catId) => {
+                const catItems = sentimentData.filter(item => item.category === catId);
+                if (catItems.length === 0) return;
+                
+                // 创建分类容器
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'sentiment-category';
+                
+                // 添加分类标题（保留标题，不显示图标）
+                const titleEl = document.createElement('h3');
+                titleEl.className = 'sentiment-category-title';
+                titleEl.textContent = sentimentCategories[catId][currentLang];
+                categoryDiv.appendChild(titleEl);
+                
+                // 创建卡片网格（纵向单列排布）
+                const gridDiv = document.createElement('div');
+                gridDiv.className = 'sentiment-grid';
+                
+                catItems.forEach((item, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'sentiment-card animate-in';
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    card.onclick = () => openSentimentModal(item);
+                    
+                    let statsHtml = '';
+                    if (item.stats) {
+                        statsHtml = item.stats.slice(0, 2).map(stat => `
+                            <div class="stat-item">
+                                <div class="stat-value">${stat.value}</div>
+                                <div class="stat-label">${stat.label[currentLang]}</div>
+                            </div>
+                        `).join('');
+                    }
+                    
+                    card.innerHTML = `
+                        <div class="sentiment-card-header">
+                            <h4>${item.title[currentLang]}</h4>
+                        </div>
+                        <p class="sentiment-short-desc">${item.shortDesc[currentLang]}</p>
+                        <div class="sentiment-stats">
+                            ${statsHtml}
+                        </div>
+                        <div class="sentiment-keywords">
+                            ${item.keywords[currentLang].slice(0, 3).map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}
+                        </div>
+                    `;
+                    
+                    gridDiv.appendChild(card);
+                });
+                
+                categoryDiv.appendChild(gridDiv);
+                container.appendChild(categoryDiv);
+            });
+        }
+
+        function openSentimentModal(item) {
+            const modal = document.getElementById('sentimentModal');
+            const title = document.getElementById('sentimentModalTitle');
+            const desc = document.getElementById('sentimentModalDesc');
+            const image = document.getElementById('sentimentModalImage');
+            const keywords = document.getElementById('sentimentKeywords');
+            
+            title.textContent = item.title[currentLang];
+            // 使用完整描述
+            desc.innerHTML = item.fullDesc[currentLang];
+            
+            // 显示所有关键词
+            keywords.innerHTML = item.keywords[currentLang].map(kw => 
+                `<span class="keyword-tag">${kw}</span>`
+            ).join('');
+            
+            // 弹窗中显示图片（先隐藏，加载完成后再显示）
+            if (item.image) {
+                image.style.display = 'none';
+                image.src = item.image;
+                image.alt = item.title[currentLang];
+                image.onload = function() {
+                    image.style.display = 'block';
+                };
+            } else {
+                image.style.display = 'none';
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSentimentModal() {
+            const modal = document.getElementById('sentimentModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        /* ==================== 链接渲染（简洁两列样式） ==================== */
+        function renderLinksGrid() {
+            const container = document.getElementById('linksGrid');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const displayLinks = [
+                { text: { zh: '访问广交会官网', en: 'Visit Canton Fair' }, url: 'https://www.cantonfair.org.cn' }
+            ];
+
+            displayLinks.forEach((link, index) => {
+                const linkEl = document.createElement('a');
+                linkEl.className = 'links-grid-item';
+                linkEl.href = link.url;
+                linkEl.target = '_blank';
+                linkEl.rel = 'noopener noreferrer';
+                linkEl.textContent = link.text[currentLang];
+                container.appendChild(linkEl);
+            });
+        }
+
+        /* ==================== 弹窗关闭（点击背景） ==================== */
+        document.getElementById('mapModal')?.addEventListener('click', function(e) {
+            if (e.target === this) closeMapModal();
+        });
+
+        document.getElementById('timelineModal')?.addEventListener('click', function(e) {
+            if (e.target === this) closeTimelineModal();
+        });
+
+        document.getElementById('sentimentModal')?.addEventListener('click', function(e) {
+            if (e.target === this) closeSentimentModal();
+        });
+
+        /* ==================== 页面加载完成后初始化 ==================== */
+        document.addEventListener('DOMContentLoaded', function() {
+            // 加载地图
+            loadProvinceMap();
+            
+            // 初始化语言（会自动调用各渲染函数）
+            setLanguage('zh');
+            
+            // 添加导航滚动监听
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-section-item');
+            
+            function updateActiveNav() {
+                const scrollPos = window.scrollY + 150;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                            if (item.getAttribute('data-section') === sectionId) {
+                                item.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveNav);
+            updateActiveNav();
+            
+            // 添加滚动动画
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.animate-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // 阻止右键菜单（防止保存图片和视频）
+            document.addEventListener('contextmenu', function(e) {
+                const target = e.target;
+                if (target.tagName === 'IMG' || 
+                    target.tagName === 'VIDEO' || 
+                    target.closest('.timeline-image') || 
+                    target.closest('.sentiment-chart') || 
+                    target.closest('.modal-image-container') ||
+                    target.closest('.video-section')) {
+                    e.preventDefault();
+                }
+            });
+
+            // 阻止拖拽（防止拖拽保存图片）
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        /* ==================== 防止页面滚动穿透 ==================== */
+        let scrollPosition = 0;
+        document.body.addEventListener('touchmove', function(e) {
+            const modals = document.querySelectorAll('.map-modal.active, .timeline-modal.active, .sentiment-modal.active');
+            if (modals.length > 0) {
+                // 允许弹窗内部滚动
+                if (!e.target.closest('.map-modal-content, .timeline-modal-content, .sentiment-modal-content')) {
+                    e.preventDefault();
+                }
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
